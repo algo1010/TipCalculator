@@ -6,4 +6,5 @@ class ThemeColor {
   static Color get secondary => Colors.orange;
   static Color get text => const Color(0xFF000000);
   static Color get separator => const Color(0xFFCCCCCC);
+  static Color get error => const Color(0xFFfb6f92);
 }

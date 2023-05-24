@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:calculator/controllers/bill_controller.dart';
 import 'package:calculator/controllers/result_controller.dart';
 import 'package:calculator/controllers/split_controller.dart';
 import 'package:calculator/controllers/tip_controller.dart';
@@ -22,6 +23,8 @@ class CalculatorApp extends StatelessWidget {
     Get.put(SplitController());
     // Inject Split controller for split component
     Get.put(TipController());
+    // Inject Split controller for split component
+    Get.put(BillController());
 
     return const Scaffold(
       backgroundColor: Color.fromARGB(255, 245, 243, 244),

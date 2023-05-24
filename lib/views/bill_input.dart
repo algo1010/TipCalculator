@@ -1,9 +1,9 @@
-import 'dart:io';
-
+import 'package:calculator/config/theme_color.dart';
 import 'package:calculator/config/theme_font.dart';
+import 'package:calculator/controllers/bill_controller.dart';
 import 'package:calculator/views/header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class BillInputComponent extends StatelessWidget {
   const BillInputComponent({super.key});
@@ -19,42 +19,41 @@ class BillInputComponent extends StatelessWidget {
               bottomTitle: 'your bill',
             )),
         const SizedBox(width: 16),
-        Expanded(
-            child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: SizedBox(
-            height: 68,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text('\$', style: ThemeFont.bold(fontSize: 35)),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: TextField(
-                      style: ThemeFont.bold(fontSize: 35),
-                      decoration:
-                          const InputDecoration(border: InputBorder.none),
-                      keyboardType: Platform.isIOS
-                          ? const TextInputType.numberWithOptions(
-                              signed: true, decimal: true)
-                          : TextInputType.number,
-// This regex for only amount (price). you can create your own regex based on your requirement
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d'))
-                      ],
-                    ),
-                  )
-                ],
+        Expanded(child: GetBuilder<BillController>(builder: (controller) {
+          final TextStyle style = controller.isShowErrorMessage.value
+              ? ThemeFont.bold(fontSize: 35, color: Colors.white)
+              : ThemeFont.bold(fontSize: 35);
+          return Container(
+              decoration: BoxDecoration(
+                color: controller.isShowErrorMessage.value
+                    ? ThemeColor.error
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(10),
               ),
-            ),
-          ),
-        ))
+              child: SizedBox(
+                height: 68,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text('\$', style: style),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: TextField(
+                            controller: controller.textController,
+                            style: style,
+                            decoration:
+                                const InputDecoration(border: InputBorder.none),
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true)),
+                      )
+                    ],
+                  ),
+                ),
+              ));
+        }))
       ],
     );
   }
