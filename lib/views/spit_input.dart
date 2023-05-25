@@ -1,10 +1,9 @@
-import 'package:calculator/config/theme_font.dart';
-import 'package:calculator/controllers/split_controller.dart';
-import 'package:calculator/views/header.dart';
+import '../config/theme_font.dart';
+import '../controllers/split_controller.dart';
+import '../views/header.dart';
+import '../common/tip_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../common/tip_button.dart';
 
 class SplitInputComponent extends StatelessWidget {
   const SplitInputComponent({super.key});

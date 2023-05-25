@@ -1,7 +1,7 @@
-import 'package:calculator/config/theme_color.dart';
-import 'package:calculator/config/theme_font.dart';
-import 'package:calculator/controllers/result_controller.dart';
-import 'package:calculator/views/amount.dart';
+import '../config/theme_color.dart';
+import '../config/theme_font.dart';
+import '../controllers/result_controller.dart';
+import '../views/amount.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +40,7 @@ class ResultComponent extends StatelessWidget {
                   style: ThemeFont.bold(fontSize: 24),
                 ),
                 Obx(() => Text(
-                      controller.totalPerPerson.toString(),
+                      controller.totalPerPerson.value,
                       style: ThemeFont.bold(fontSize: 48),
                     )),
               ],

@@ -1,5 +1,5 @@
-import 'package:calculator/config/theme_color.dart';
-import 'package:calculator/config/theme_font.dart';
+import '../config/theme_color.dart';
+import '../config/theme_font.dart';
 import 'package:flutter/material.dart';
 
 class AmountComponent extends StatelessWidget {

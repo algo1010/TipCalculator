@@ -1,9 +1,10 @@
-import 'package:calculator/controllers/tip_controller.dart';
-import 'package:calculator/utils/utils.dart';
-import 'package:calculator/views/header.dart';
+import '../common/input_popup.dart';
+import '../controllers/tip_controller.dart';
+import '../utils/utils.dart';
+import '../views/header.dart';
+import '../common/tip_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../common/tip_button.dart';
 
 class TipInputComponent extends StatelessWidget {
   const TipInputComponent({super.key});
@@ -73,9 +74,12 @@ class TipInputComponent extends StatelessWidget {
                 SizedBox(
                     height: 50,
                     child: TipButton(
-                      title: createTipTitle(value: 'Custom tip'),
+                      title: createTipTitle(
+                        value: controller.customTipText,
+                        sufix: controller.customTipSuffix,
+                      ),
                       onTapped: () {
-                        controller.selectTip(tip: Tip.custom);
+                        showCustomTipPopup();
                       },
                       backgroundColor: controller.customPercentBackgroundColor,
                     )),
@@ -84,6 +88,19 @@ class TipInputComponent extends StatelessWidget {
           }),
         ),
       ],
+    );
+  }
+
+  void showCustomTipPopup() {
+    Get.dialog(
+      InputPopup(
+        title: 'Enter your tip',
+        onChoose: (int percent) {
+          final controller = Get.find<TipController>();
+          controller.selectTip(tip: Tip.custom, percent: percent);
+        },
+      ),
+      barrierDismissible: true,
     );
   }
 }

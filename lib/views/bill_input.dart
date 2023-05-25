@@ -1,7 +1,7 @@
-import 'package:calculator/config/theme_color.dart';
-import 'package:calculator/config/theme_font.dart';
-import 'package:calculator/controllers/bill_controller.dart';
-import 'package:calculator/views/header.dart';
+import '../config/theme_color.dart';
+import '../config/theme_font.dart';
+import '../controllers/bill_controller.dart';
+import '../views/header.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -42,6 +42,7 @@ class BillInputComponent extends StatelessWidget {
                       const SizedBox(width: 16),
                       Expanded(
                         child: TextField(
+                            enableInteractiveSelection: false,
                             controller: controller.textController,
                             style: style,
                             decoration:

@@ -1,14 +1,12 @@
-import 'dart:math';
-
-import 'package:calculator/controllers/bill_controller.dart';
-import 'package:calculator/controllers/result_controller.dart';
-import 'package:calculator/controllers/split_controller.dart';
-import 'package:calculator/controllers/tip_controller.dart';
-import 'package:calculator/views/bill_input.dart';
-import 'package:calculator/views/logo.dart';
-import 'package:calculator/views/result.dart';
-import 'package:calculator/views/spit_input.dart';
-import 'package:calculator/views/tip_input.dart';
+import './controllers/bill_controller.dart';
+import './controllers/result_controller.dart';
+import './controllers/split_controller.dart';
+import './controllers/tip_controller.dart';
+import './views/bill_input.dart';
+import './views/logo.dart';
+import './views/result.dart';
+import './views/spit_input.dart';
+import './views/tip_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,23 +15,23 @@ class CalculatorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inject Result controller for result component
-    Get.put(ResultController());
     // Inject Split controller for split component
     Get.put(SplitController());
     // Inject Split controller for split component
     Get.put(TipController());
     // Inject Split controller for split component
     Get.put(BillController());
+    // Inject Result controller for result component
+    Get.put(ResultController());
 
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 245, 243, 244),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 243, 244),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(30, 30, 30, 40),
+            padding: const EdgeInsets.fromLTRB(30, 30, 30, 40),
             child: Column(
-              children: [
+              children: const [
                 Logo(),
                 SizedBox(height: 30),
                 ResultComponent(),

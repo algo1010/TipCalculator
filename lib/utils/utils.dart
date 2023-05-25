@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../config/theme_font.dart';
 
 Text createTipTitle(
