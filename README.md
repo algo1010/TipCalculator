@@ -17,3 +17,12 @@ Tip Calculator is a simple mobile application that helps users calculate the tip
 
 ## Summary:
 The Tip Calculator app is a handy tool for calculating the tip amount in a convenient and efficient way. With its user-friendly interface and customizable features, it simplifies the process of tipping and ensures accurate calculations for users in various tipping scenarios.
+
+## Screenshot
+<p float="left">
+  <img src="./screenshot/pic1.png" width="200" />
+  <img src="./screenshot/pic2.png" width="200" />
+  <img src="./screenshot/pic3.png" width="200" />
+  <img src="./screenshot/pic4.png" width="200" />
+  <img src="./screenshot/pic5.png" width="200" />
+</p>
