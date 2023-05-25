@@ -1,9 +1,9 @@
 # Tip Calculator
 
-# Description:
+## Description:
 Tip Calculator is a simple mobile application that helps users calculate the tip amount based on the total bill and desired tip percentage. This app allows users to easily and quickly calculate the tip amount they need to pay in various situations such as dining out, restaurants, delivery services, or any field that requires tipping.
 
-# Key Features:
+## Key Features:
 
 1. Tip Calculation: Users input the total bill amount and select the desired tip percentage (either default values or custom values). The app automatically calculates the tip amount and the total amount to be paid (including both the tip and the bill total).
 
@@ -15,5 +15,5 @@ Tip Calculator is a simple mobile application that helps users calculate the tip
 
 5. Multi-Language Support: The app supports multiple languages to serve users in different countries and regions.
 
-# Summary:
+## Summary:
 The Tip Calculator app is a handy tool for calculating the tip amount in a convenient and efficient way. With its user-friendly interface and customizable features, it simplifies the process of tipping and ensures accurate calculations for users in various tipping scenarios.
